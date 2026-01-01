@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eric Arturo Martinez | Software Engineer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+<nav class="nav">
+  <div class="nav-container">
+    <h1 class="logo">EAM</h1>
+
+    <!-- Botón hamburguesa -->
+    <button class="menu-toggle" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Menú -->
+    <ul class="nav-menu">
+      <li><a href="#about">Sobre mí</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experiencia</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="slider">
+    <div class="slides fade">
+      <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg" alt="Tech Code Background">
+    </div>
+
+    <div class="slides fade">
+      <img src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg" alt="Laptop Programming">
+    </div>
+
+    <div class="slides fade">
+      <img src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg" alt="Developer Workflow">
+    </div>
+
+    <div class="slider-dots">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+  </div>
+
+  <div class="hero-content overlay">
+    <h2>Ingeniero de Software</h2>
+    <p>Ingeniería • Automatización • Tecnología</p>
+    <a href="#contact" class="btn">Contactar</a>
+  </div>
+</header>
+
+
+<section id="about" class="section reveal">
+  <h2>Sobre mí</h2>
+  <p>
+    Ingeniero de Software con sólida experiencia técnica, liderazgo operativo
+    y enfoque en calidad, automatización y soluciones tecnológicas.
+    Capaz de integrar software con entornos industriales, BMS, HVAC
+    y sistemas críticos.
+  </p>
+</section>
+
+<section id="skills" class="section dark reveal">
+  <h2>Skills Técnicos</h2>
+
+  <div class="grid">
+    <div class="card">JavaScript</div>
+    <div class="card">Python</div>
+    <div class="card">Java</div>
+    <div class="card">MongoDB / SQL</div>
+    <div class="card">AWS / Azure / Firebase</div>
+    <div class="card">Linux / Redes</div>
+    <div class="card">PLC / BMS</div>
+    <div class="card">Power BI / Data</div>
+  </div>
+</section>
+
+<section id="experience" class="section reveal">
+  <h2>Experiencia</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>Administrador CSC – H Ujueta S.A.S</h3>
+      <span>2025 - Actualidad</span>
+      <p>Gestión de servicios técnicos, liderazgo de equipos, control de activos y procesos.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Supervisor Técnico – VRF Ingeniería</h3>
+      <span>2016 - Actualidad</span>
+      <p>Implementación de sistemas BMS, automatización, redes y soporte técnico avanzado.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section dark reveal">
+  <h2>Contacto</h2>
+
+  <div class="contact-box">
+    <p>📍 Soledad, Atlántico - Colombia</p>
+    <p>📧 emartinezacelas@gmail.com</p>
+    <p>📱 301 189 9923</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Eric Arturo Martinez Acelas</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
