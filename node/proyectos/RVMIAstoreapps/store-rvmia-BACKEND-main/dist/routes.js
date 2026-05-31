@@ -1,0 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.routes = void 0;
+const express_1 = require("express");
+const auth_routes_1 = require("./modules/auth/auth.routes");
+const user_routes_1 = require("./modules/users/user.routes");
+const product_routes_1 = require("./modules/products/product.routes");
+const cart_routes_1 = require("./modules/cart/cart.routes");
+const order_routes_1 = require("./modules/orders/order.routes");
+const payment_routes_1 = require("./modules/payments/payment.routes");
+exports.routes = (0, express_1.Router)();
+exports.routes.use("/auth", auth_routes_1.authRoutes);
+exports.routes.use("/users", user_routes_1.userRoutes);
+exports.routes.use("/products", product_routes_1.productRoutes);
+exports.routes.use("/cart", cart_routes_1.cartRoutes);
+exports.routes.use("/orders", order_routes_1.orderRoutes);
+exports.routes.use("/payments", payment_routes_1.paymentRoutes);
