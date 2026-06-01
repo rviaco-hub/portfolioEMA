@@ -10,10 +10,14 @@ import morgan from 'morgan';
 
 import {routes} from './routes';
 
-import {paymentRoutes} from "./modules/payments/payment.routes";
+import paymentRoutes from "./modules/payments/payment.routes";
 import { errorMiddleware } from './middlewares/error.middleware';
 
 const app = express();
+app.use(express.json());
+
+// opcional
+app.use(express.urlencoded({ extended: true }));
 
 app.use(helmet());
 

@@ -1,26 +1,26 @@
 import { Request, Response } from "express";
-import { Cart } from "../cart/cart.model";
 import { Order } from "./order.model";
 import { ok, fail } from "../../utils/response";
 
 export const createOrder = async (req: any, res: Response) => {
-  const cart = await Cart.findOne({ user: req.user.id });
+  const { items } = req.body;
 
-  if (!cart || cart.items.length === 0)
+  if (!items || !Array.isArray(items) || items.length === 0) {
     return fail(res, "Carrito vacío");
+  }
 
-  const total = cart.items.reduce(
-    (sum, i) => sum + i.price * i.quantity,
+  const total = items.reduce(
+    (sum: number, item: any) =>
+      sum + Number(item.price || 0) * Number(item.quantity || 0),
     0
   );
 
   const order = await Order.create({
     user: req.user.id,
-    items: cart.items,
-    total
+    items,
+    total,
+    status: "pending"
   });
-
-  // carrito se limpia después del pago exitoso
 
   return ok(res, order);
 };

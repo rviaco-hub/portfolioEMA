@@ -5,7 +5,7 @@ import { productRoutes } from "./modules/products/product.routes";
 
 import { cartRoutes } from "./modules/cart/cart.routes";
 import { orderRoutes } from "./modules/orders/order.routes";
-import { paymentRoutes } from "./modules/payments/payment.routes";
+import paymentRoutes from "./modules/payments/payment.routes";
 
 export const routes = Router();
 
