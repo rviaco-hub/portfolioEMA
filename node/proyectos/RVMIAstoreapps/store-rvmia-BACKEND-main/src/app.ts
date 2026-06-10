@@ -13,16 +13,37 @@ import {routes} from './routes';
 import paymentRoutes from "./modules/payments/payment.routes";
 import { errorMiddleware } from './middlewares/error.middleware';
 
-const app = express();
-app.use(express.json());
+const allowedOrigins = [
+  "https://bigstore.rvmia.com",
+  "https://rvmia.com",
+  "https://providers.rvmia.com",
+];
 
-// opcional
-app.use(express.urlencoded({ extended: true }));
+const app = express();
 
 app.use(helmet());
 
 app.use(cors({
-  origin: process.env.FRONTEND_URL,
+  origin(origin, callback) {
+
+    // Postman, curl, apps móviles...
+    if (!origin) {
+      return callback(null, true);
+    }
+
+    const allowed =
+      origin === "https://rvmia.com" ||
+      origin.endsWith(".rvmia.com") ||
+      origin === "http://localhost:5173" ||
+      origin === "http://localhost:5174";
+
+    if (allowed) {
+      return callback(null, true);
+    }
+
+    callback(new Error("Not allowed by CORS"));
+  },
+
   credentials: true,
 }));
 
