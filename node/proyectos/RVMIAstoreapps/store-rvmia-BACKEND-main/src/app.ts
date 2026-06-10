@@ -33,9 +33,7 @@ app.use(cors({
 
     const allowed =
       origin === "https://rvmia.com" ||
-      origin.endsWith(".rvmia.com") ||
-      origin === "http://localhost:5173" ||
-      origin === "http://localhost:5174";
+      origin.endsWith(".rvmia.com")
 
     if (allowed) {
       return callback(null, true);
